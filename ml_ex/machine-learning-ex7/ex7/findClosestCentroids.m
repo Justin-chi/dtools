@@ -20,12 +20,21 @@ idx = zeros(size(X,1), 1);
 %
 % Note: You can use a for-loop over the examples to compute this.
 %
-
-
-
-
-
-
+for i = 1:size(X,1)
+    distance_min = 100000000;
+    idx_min = 100000000;
+    for j = 1:K
+        distance = sum((X(i,:) - centroids(j,:)).^2);
+        if distance < distance_min
+%            fprintf('found new distance and old distance_min[%f:%f]', distance, distance_min);
+%            fprintf('found new idx and idx_min[%f:%f]', j, idx_min);
+            distance_min = distance;
+%            fprintf('found new distance_min[%f]', distance_min);
+            idx_min = j
+        end
+    end
+    idx(i) = idx_min;
+end
 
 % =============================================================
 

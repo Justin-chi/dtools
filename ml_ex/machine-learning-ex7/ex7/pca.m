@@ -20,11 +20,8 @@ S = zeros(n);
 %       number of examples).
 %
 
-
-
-
-
-
+sigma_matrix = (X')*X/m;
+[U,S,V]=svd(sigma_matrix);
 
 % =========================================================================
 
