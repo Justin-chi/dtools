@@ -39,13 +39,13 @@ Theta_grad = zeros(size(Theta));
 %        Theta_grad - num_users x num_features matrix, containing the 
 %                     partial derivatives w.r.t. to each element of Theta
 %
-fprintf('sizeof X :%f %f \n', size(X,1), size(X',1));
-fprintf('sizeof Theta :%f %f \n', size(Theta,1), size(Theta',1));
+% fprintf('sizeof X :%f %f \n', size(X,1), size(X',1));
+% fprintf('sizeof Theta :%f %f \n', size(Theta,1), size(Theta',1));
 
 predict = X*Theta';
 variance = ((predict - Y) .* R);
 
-fprintf('sizeof variance :%f %f \n', size(variance,1), size(variance',1));
+% fprintf('sizeof variance :%f %f \n', size(variance,1), size(variance',1));
 
 J = 1/2 * sum(sum(variance .^ 2)) + lambda/2*sum(sum(Theta .^ 2)) + lambda/2*sum(sum(X .^2));
 
